@@ -15,7 +15,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 
-// --- Components ---
+// --- コンポーネント ---
 
 const Navbar = () => {
   return (
@@ -28,12 +28,7 @@ const Navbar = () => {
           <a href="#works" className="hover:text-indigo-600 transition-colors">Works</a>
           <a href="#contact" className="px-6 py-2 bg-indigo-600 text-white rounded-full hover:bg-black transition-all">Contact</a>
         </div>
-        {/* Mobile menu icon */}
-        <div className="md:hidden p-2 text-gray-600">
-          <div className="w-6 h-0.5 bg-current mb-1.5"></div>
-          <div className="w-6 h-0.5 bg-current mb-1.5"></div>
-          <div className="w-4 h-0.5 bg-current ml-auto"></div>
-        </div>
+        {/* モバイルメニュー（3本線）は不要なため削除しました */}
       </div>
     </nav>
   );
@@ -112,7 +107,7 @@ const About = () => {
               <div className="absolute inset-0 bg-indigo-600/10 mix-blend-multiply"></div>
             </div>
             
-            {/* Age Information Card */}
+            {/* 年齢情報カード */}
             <div className="absolute -top-6 -right-4 md:top-10 md:-right-10 p-5 md:p-8 bg-white shadow-2xl rounded-3xl border border-gray-50 z-20">
               <div className="flex items-center space-x-4">
                 <div className="p-2 md:p-3 bg-indigo-600 rounded-2xl text-white">
@@ -286,7 +281,7 @@ const Footer = () => {
   );
 };
 
-// --- Styles ---
+// --- スタイル ---
 const style = `
   html {
     scroll-behavior: smooth;
