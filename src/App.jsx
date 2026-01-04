@@ -2,265 +2,160 @@ import React from 'react';
 import { 
   User, 
   Code, 
-  Zap, 
-  Layers, 
-  ArrowRight, 
-  Instagram, 
-  Twitter, 
+  Terminal,
+  Globe,
+  Layers,
+  Cpu,
   Mail,
+  Instagram,
+  Twitter,
+  ArrowRight,
+  ExternalLink,
   ChevronDown
 } from 'lucide-react';
 
-// --- Components ---
-
-const Navbar = () => {
+/**
+ * nola-reportforio - Main Component
+ * Built with React and Tailwind CSS v4
+ */
+export default function App() {
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
-        <div className="text-2xl font-bold tracking-tighter italic">Nola.</div>
-        <div className="hidden md:flex space-x-12 text-sm font-medium tracking-widest text-gray-500 uppercase">
-          <a href="#about" className="hover:text-black transition-colors">About</a>
-          <a href="#services" className="hover:text-black transition-colors">Services</a>
-          <a href="#works" className="hover:text-black transition-colors">Works</a>
-          <a href="#contact" className="hover:text-black transition-colors border-b-2 border-indigo-600 pb-1 text-black">Contact</a>
-        </div>
-      </div>
-    </nav>
-  );
-};
-
-const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 bg-[#fbfbfb] overflow-hidden">
-      <div className="max-w-5xl mx-auto px-8 w-full relative z-10">
-        <div className="space-y-6 animate-sway">
-          <p className="text-indigo-600 font-semibold tracking-[0.3em] uppercase text-sm animate-fade-in">
-            Web Developer & Designer
-          </p>
-          <h1 className="text-6xl md:text-8xl font-serif leading-tight text-gray-900 animate-slide-up">
-            Transforming ideas <br />
-            <span className="italic text-gray-400 font-light">into digital reality.</span>
-          </h1>
-          <p className="max-w-xl text-lg text-gray-500 font-light leading-relaxed pt-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            独学で磨き上げた確かな技術力と、理系大学生ならではの論理的思考で、
-            あなたのビジネスを加速させるWebサイトを構築します。
-          </p>
-          <div className="pt-8 flex space-x-6 items-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <a href="#services" className="px-10 py-5 bg-black text-white rounded-full hover:bg-indigo-600 transition-all duration-300 flex items-center group shadow-xl shadow-black/5">
-              View Services
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-indigo-100 selection:text-indigo-900">
       
-      <div className="absolute top-1/4 -right-20 w-96 h-96 bg-indigo-50 rounded-full blur-3xl opacity-50 animate-sway" style={{ animationDuration: '8s' }}></div>
-      <div className="absolute bottom-1/4 -left-20 w-64 h-64 bg-gray-100 rounded-full blur-3xl opacity-60 animate-sway" style={{ animationDuration: '10s', animationDelay: '1s' }}></div>
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <div className="text-2xl font-bold tracking-tighter italic">Nola.</div>
+          <div className="hidden md:flex space-x-10 text-[10px] font-black tracking-[0.2em] text-slate-400 uppercase">
+            <a href="#about" className="hover:text-indigo-600 transition-colors">About</a>
+            <a href="#services" className="hover:text-indigo-600 transition-colors">Services</a>
+            <a href="#works" className="hover:text-indigo-600 transition-colors">Works</a>
+            <a href="#contact" className="hover:text-indigo-600 transition-colors border-b-2 border-indigo-600 pb-1 text-slate-900">Contact</a>
+          </div>
+        </div>
+      </nav>
 
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <ChevronDown className="text-gray-300 w-8 h-8" />
-      </div>
-    </section>
-  );
-};
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center pt-20 bg-[#f8f9ff] overflow-hidden">
+        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-indigo-100 rounded-full blur-[120px] opacity-50"></div>
+        <div className="absolute bottom-1/4 -left-20 w-64 h-64 bg-purple-100 rounded-full blur-[100px] opacity-60"></div>
 
-const About = () => {
-  const skills = [
-    "C", "Java", "Python", "JavaScript", "HTML", "CSS", "React", "UI Design", "UX Design"
-  ];
-
-  return (
-    <section id="about" className="py-32 md:py-48 bg-white overflow-hidden scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="grid md:grid-cols-2 gap-24 items-center">
-          <div className="relative">
-            <div className="aspect-[4/5] bg-gray-50 rounded-2xl overflow-hidden relative group border border-gray-100">
-              <img 
-                src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800" 
-                alt="Personal Concept Illustration" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                onError={(e) => { e.target.src = "https://via.placeholder.com/800x1000?text=Developer+Portrait"; }}
-              />
-              <div className="absolute inset-0 bg-indigo-900/5 group-hover:bg-transparent transition-colors duration-500"></div>
-            </div>
-            <div className="absolute -bottom-8 -right-8 p-10 bg-white shadow-2xl rounded-2xl hidden lg:block border border-gray-50">
-              <div className="text-5xl font-serif text-indigo-600 mb-2">22</div>
-              <div className="text-xs tracking-widest uppercase text-gray-400">Years Old</div>
+        <div className="max-w-5xl mx-auto px-8 w-full relative z-10 text-center md:text-left">
+          <div className="space-y-6">
+            <p className="text-indigo-600 font-bold tracking-[0.3em] uppercase text-xs">
+              Web Developer & Designer
+            </p>
+            <h1 className="text-5xl md:text-8xl font-serif leading-tight text-slate-900">
+              Transforming ideas <br />
+              <span className="italic text-slate-400 font-light">into digital reality.</span>
+            </h1>
+            <p className="max-w-xl text-lg text-slate-500 font-light leading-relaxed pt-4 mx-auto md:mx-0">
+              理系大学生としての論理的思考と、モダンなWeb技術を融合。
+              単なるコードの集合体ではない、美しく直感的な体験を提供します。
+            </p>
+            <div className="pt-8 flex justify-center md:justify-start space-x-6 items-center">
+              <a href="#works" className="px-10 py-5 bg-black text-white rounded-2xl hover:bg-indigo-600 transition-all duration-300 flex items-center group shadow-xl shadow-black/5">
+                View Works
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
           </div>
-          <div className="space-y-12">
-            <div className="space-y-4">
-              <h2 className="text-sm font-bold tracking-[0.4em] text-indigo-600 uppercase">Profile</h2>
-              <h3 className="text-4xl md:text-5xl font-serif font-medium">Nola / ノラ</h3>
+        </div>
+
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-20">
+          <ChevronDown size={32} />
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-32 bg-white scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid md:grid-cols-2 gap-24 items-center">
+            <div className="aspect-square bg-slate-50 rounded-3xl overflow-hidden relative border border-slate-100 group">
+              <img 
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000" 
+                alt="Workspace" 
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              />
+              <div className="absolute bottom-6 right-6 p-6 bg-white shadow-2xl rounded-2xl border border-slate-50">
+                <div className="text-3xl font-serif text-indigo-600">04</div>
+                <div className="text-[10px] tracking-widest uppercase text-slate-400 font-bold">University Year</div>
+              </div>
             </div>
-            <div className="space-y-6 text-gray-600 leading-loose">
-              <p>
-                現在、理系大学に通う学部4年生。学問の傍ら、Web開発の無限の可能性に魅了され、独学でエンジニアリングの道を切り拓いてきました。
+            <div className="space-y-12">
+              <div className="space-y-4">
+                <h2 className="text-xs font-black tracking-[0.4em] text-indigo-600 uppercase">About Me</h2>
+                <h3 className="text-4xl md:text-5xl font-serif">Nola / ノラ</h3>
+              </div>
+              <p className="text-slate-500 leading-loose text-lg font-light">
+                理系大学4年生。情報科学の知見を活かし、データとデザインの交差点でプロダクトを開発しています。
+                「なぜこのUIなのか」を論理的に説明できる、説得力のあるデザインを信条としています。
               </p>
-              <p>
-                C言語やJavaといった堅牢な言語での基礎から、Pythonによる効率的なスクリプト、そしてJavaScript/Reactを用いたモダンなフロントエンドまで、多岐にわたる技術に精通しています。
-                理系特有の論理的思考を武器に、UXを重視した直感的なUIデザインから、パフォーマンスに妥協しない高度な実装まで一気通貫で対応します。
-              </p>
-            </div>
-            <div className="pt-4">
-              <h4 className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-6">Expertise</h4>
-              <div className="flex flex-wrap gap-3">
-                {skills.map(skill => (
-                  <span key={skill} className="px-5 py-2 border border-gray-100 bg-gray-50 text-gray-600 rounded-full text-sm font-medium hover:border-indigo-200 hover:text-indigo-600 transition-colors">
-                    {skill}
-                  </span>
+              <div className="grid grid-cols-2 gap-4">
+                {['React', 'TypeScript', 'Tailwind', 'Python', 'C++', 'Java'].map(skill => (
+                  <div key={skill} className="flex items-center space-x-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                    <Terminal size={16} className="text-indigo-500" />
+                    <span className="text-sm font-bold text-slate-700">{skill}</span>
+                  </div>
                 ))}
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
+      </section>
 
-const Services = () => {
-  const services = [
-    {
-      icon: <Layers className="w-8 h-8 text-indigo-600" />,
-      title: "Design & Dev",
-      subTitle: "デザインから開発まで一気通貫",
-      desc: "要件定義からUI/UXデザイン、フロントエンド・バックエンドの実装まで、ワンストップで対応. ブランドの価値を最大化する一貫性のあるWebサイトを構築します。"
-    },
-    {
-      icon: <Zap className="w-8 h-8 text-indigo-600" />,
-      title: "Fast Delivery",
-      subTitle: "業界最短クラスの納品スピード",
-      desc: "スピードは最大の付加価値. 徹底した無駄の排除と高度な開発フローにより、品質を落とすことなく圧倒的な速さでプロダクトをお届けします。"
-    },
-    {
-      icon: <Code className="w-8 h-8 text-indigo-600" />,
-      title: "Custom Web Apps",
-      subTitle: "オーダーメイドのWebシステム",
-      desc: "ビジネスの課題を解決するための最適な技術選定と設計を行います. スケーラビリティを考慮した保守性の高いモダンな構成を提案します。"
-    }
-  ];
-
-  return (
-    <section id="services" className="py-32 md:py-48 bg-[#111] text-white scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="mb-24 text-center space-y-4">
-          <h2 className="text-sm font-bold tracking-[0.4em] text-indigo-400 uppercase">What I Do</h2>
-          <h3 className="text-5xl font-serif italic">Expert Services</h3>
-        </div>
-        <div className="grid md:grid-cols-3 gap-12">
-          {services.map((s, idx) => (
-            <div key={idx} className="group p-12 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition-all duration-500">
-              <div className="mb-8">{s.icon}</div>
-              <h4 className="text-2xl font-serif mb-2">{s.title}</h4>
-              <p className="text-indigo-400 text-xs font-bold tracking-widest uppercase mb-6">{s.subTitle}</p>
-              <p className="text-gray-400 leading-relaxed font-light">
-                {s.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const Works = () => {
-  return (
-    <section id="works" className="py-32 md:py-48 bg-white scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
-          <div className="space-y-4">
-            <h2 className="text-sm font-bold tracking-[0.4em] text-indigo-600 uppercase">Works</h2>
-            <h3 className="text-5xl font-serif">Selected Projects</h3>
+      {/* Services Section */}
+      <section id="services" className="py-32 bg-slate-900 text-white scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="mb-24 space-y-4">
+            <h2 className="text-xs font-black tracking-[0.4em] text-indigo-400 uppercase">Expertise</h2>
+            <h3 className="text-5xl font-serif italic">Expert Solutions</h3>
           </div>
-          <p className="text-gray-400 max-w-xs font-light italic">
-            実績は順次アップデートいたします. 新たな価値創造の過程をご覧ください。
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-12">
-          {[1, 2].map(i => (
-            <div key={i} className="group cursor-wait">
-              <div className="aspect-video bg-gray-50 rounded-2xl overflow-hidden mb-6 flex items-center justify-center border border-gray-100 group-hover:bg-gray-100 transition-colors">
-                 <span className="text-gray-300 font-serif italic text-lg">Coming Soon</span>
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              { icon: <Globe />, title: "Web Strategy", desc: "最新のトレンドと技術スタックを組み合わせ、ビジネスに最適なWeb戦略を構築します。" },
+              { icon: <Cpu />, title: "Engineering", desc: "React/TypeScriptによる、型安全で保守性の高いフロントエンド実装を提供します。" },
+              { icon: <Layers />, title: "Design Systems", desc: "一貫性のあるビジュアル言語を設計し、ブランドのアイデンティティを確立します。" }
+            ].map((s, i) => (
+              <div key={i} className="p-10 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition-all">
+                <div className="mb-8 text-indigo-400">{s.icon}</div>
+                <h4 className="text-2xl font-serif mb-4">{s.title}</h4>
+                <p className="text-slate-400 leading-relaxed font-light text-sm">{s.desc}</p>
               </div>
-              <h4 className="text-xl font-medium text-gray-400">Project {i === 1 ? 'Alpha' : 'Beta'}</h4>
-              <p className="text-sm text-gray-300 uppercase tracking-widest">Case Study / Development</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  );
-};
+      </section>
 
-const Footer = () => {
-  return (
-    <footer id="contact" className="py-24 bg-gray-50 border-t border-gray-100 scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+      {/* Footer / Contact */}
+      <footer id="contact" className="py-24 bg-white border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
           <div className="space-y-6">
-            <h3 className="text-5xl md:text-7xl font-serif tracking-tighter">Let's build <br /> something great.</h3>
-            <p className="text-gray-500 text-lg">お仕事のご相談やお問い合わせはSNS、またはメールまで。</p>
-            <div className="flex space-x-6">
-              <a href="mailto:your-email@gmail.com" className="p-4 bg-white border border-gray-200 rounded-full hover:shadow-lg transition-shadow" title="Gmail">
-                <Mail className="w-5 h-5" />
+            <h3 className="text-5xl md:text-7xl font-serif tracking-tighter">Let's build <br /> together.</h3>
+            <div className="flex space-x-6 pt-4">
+              <a href="mailto:hello@example.com" className="text-slate-400 hover:text-indigo-600 transition-colors">
+                <Mail />
               </a>
-              <a href="https://instagram.com/your-profile" target="_blank" rel="noopener noreferrer" className="p-4 bg-white border border-gray-200 rounded-full hover:shadow-lg transition-shadow" title="Instagram">
-                <Instagram className="w-5 h-5" />
+              {/* Instagram link updated to nola.webdev */}
+              <a 
+                href="https://www.instagram.com/nola.webdev/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-slate-400 hover:text-indigo-600 transition-colors"
+              >
+                <Instagram />
               </a>
-              <a href="https://x.com/your-profile" target="_blank" rel="noopener noreferrer" className="p-4 bg-white border border-gray-200 rounded-full hover:shadow-lg transition-shadow" title="X">
-                <Twitter className="w-5 h-5" />
+              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-indigo-600 transition-colors">
+                <Twitter />
               </a>
             </div>
           </div>
-          <div className="w-full md:w-auto text-right">
-             <div className="text-xs tracking-[0.5em] uppercase text-gray-400 mb-2">Developed By</div>
-             <div className="text-2xl font-bold italic tracking-tighter">Nola.</div>
-             <p className="text-sm text-gray-400 mt-8">&copy; {new Date().getFullYear()} Nola All Rights Reserved.</p>
+          <div className="text-right">
+            <div className="text-2xl font-bold italic">Nola.</div>
+            <p className="text-xs text-slate-400 mt-4 tracking-widest uppercase">© {new Date().getFullYear()} nola-reportforio</p>
           </div>
         </div>
-      </div>
-    </footer>
-  );
-};
-
-// --- Styles ---
-const style = `
-  html {
-    scroll-behavior: smooth;
-  }
-  @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  @keyframes slide-up {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes sway {
-    0% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-10px) rotate(0.5deg); }
-    100% { transform: translateY(0px) rotate(0deg); }
-  }
-  .animate-fade-in { animation: fade-in 1s ease-out forwards; }
-  .animate-slide-up { animation: slide-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-  .animate-sway { animation: sway 6s ease-in-out infinite; }
-`;
-
-export default function App() {
-  return (
-    <div className="min-h-screen font-sans text-gray-900 bg-white selection:bg-indigo-100 selection:text-indigo-900">
-      <style>{style}</style>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Works />
-      </main>
-      <Footer />
+      </footer>
     </div>
   );
 }
