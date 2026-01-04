@@ -104,7 +104,6 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative order-2 lg:order-1">
             <div className="aspect-square bg-indigo-50 rounded-[40px] overflow-hidden relative group">
-              {/* Profile Image - unified source */}
               <img 
                 src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000" 
                 alt="Profile" 
@@ -113,7 +112,7 @@ const About = () => {
               <div className="absolute inset-0 bg-indigo-600/10 mix-blend-multiply"></div>
             </div>
             
-            {/* Floating Info Card - Now visible on mobile and using Age */}
+            {/* Age Information Card */}
             <div className="absolute -top-6 -right-4 md:top-10 md:-right-10 p-5 md:p-8 bg-white shadow-2xl rounded-3xl border border-gray-50 z-20">
               <div className="flex items-center space-x-4">
                 <div className="p-2 md:p-3 bg-indigo-600 rounded-2xl text-white">
@@ -134,7 +133,7 @@ const About = () => {
             </div>
             <div className="space-y-6 text-gray-500 leading-loose text-lg font-light">
               <p>
-                理系大学の4年生として、計算機科学と数学の美しさを学んでいます。
+                理系大学生として、計算機科学と数学の美しさを学んでいます。
                 私の開発プロセスは、常に「なぜそうなるのか」という論理的な問いから始まります。
               </p>
               <p>
