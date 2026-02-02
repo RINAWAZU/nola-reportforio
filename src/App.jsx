@@ -21,7 +21,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6 md:px-8 h-20 flex items-center justify-between">
-        <div className="text-2xl font-bold tracking-tighter italic hover:opacity-70 transition-opacity cursor-pointer">Nola.</div>
+        <div className="text-2xl font-bold tracking-tighter italic hover:opacity-70 transition-opacity cursor-pointer">RIN</div>
         <div className="hidden md:flex space-x-10 text-xs font-bold tracking-[0.2em] text-gray-400 uppercase">
           <a href="#about" className="hover:text-indigo-600 transition-colors">About</a>
           <a href="#services" className="hover:text-indigo-600 transition-colors">Services</a>
@@ -125,6 +125,12 @@ const About = () => {
             <div className="space-y-4 text-center lg:text-left">
               <h2 className="text-xs font-black tracking-[0.5em] text-indigo-600 uppercase">Introduction</h2>
               <h3 className="text-4xl md:text-6xl font-serif leading-tight">Beyond Code <br /> Is Reality.</h3>
+            </div>
+            <div className="space-y-4">
+              <div className="text-center lg:text-left">
+                <p className="text-[10px] md:text-xs font-bold tracking-[0.4em] text-gray-400 uppercase">Profile</p>
+                <p className="text-3xl md:text-4xl font-serif text-gray-900 mt-2">RIN</p>
+              </div>
             </div>
             <div className="space-y-6 text-gray-500 leading-loose text-lg font-light">
               <p>
@@ -252,7 +258,7 @@ const Footer = () => {
               最新の技術トレンドについての雑談も歓迎です。
             </p>
             <div className="flex space-x-8">
-              <a href="mailto:hello@nola.dev" className="text-gray-400 hover:text-indigo-600 transition-colors"><Mail size={24} /></a>
+              <a href="mailto:awazurin551@gmail.com" className="text-gray-400 hover:text-indigo-600 transition-colors"><Mail size={24} /></a>
               <a href="https://www.instagram.com/nola.webdev/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-600 transition-colors"><Instagram size={24} /></a>
               <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-indigo-600 transition-colors"><Twitter size={24} /></a>
             </div>
@@ -261,7 +267,7 @@ const Footer = () => {
           <div className="bg-gray-900 rounded-[40px] p-8 md:p-12 text-white space-y-8 mt-10 lg:mt-0">
             <div className="space-y-2">
               <div className="text-indigo-400 text-xs font-bold tracking-widest uppercase">Contact Direct</div>
-              <div className="text-2xl font-serif">hello@nola.dev</div>
+              <div className="text-2xl font-serif">awazurin551@gmail.com</div>
             </div>
             <div className="h-px bg-white/10 w-full"></div>
             <div className="flex justify-between items-end">
@@ -270,7 +276,7 @@ const Footer = () => {
                 <div className="text-sm">Tokyo, Japan</div>
               </div>
               <div className="text-right">
-                <div className="text-2xl font-bold italic tracking-tighter">Nola.</div>
+                <div className="text-2xl font-bold italic tracking-tighter">RIN</div>
                 <p className="text-[10px] text-gray-500 mt-2 tracking-widest uppercase">© {new Date().getFullYear()} All Rights Reserved</p>
               </div>
             </div>
